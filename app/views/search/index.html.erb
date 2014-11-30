@@ -1,3 +1,3 @@
-<% @all_image_links.each do |link| %>
-  <h3> <%= image_tag "#{link}" %> <h3>
+<% @all_image_thumbnails.each do |link| %>
+  <h3> <%= image_tag "#{link}" %> <%= link_to link %><h3>
 <% end %>
