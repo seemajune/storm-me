@@ -1,3 +1,13 @@
-<% @all_image_thumbnails.each do |link, info| %>
-  <h3> <%= image_tag "#{link}" %> <%= link_to link %>  <%= info %><h3>
+<div style="gallery">
+  <% @locations.each_with_index do |image, value| %>
+      <ul class="rig">
+        <li>
+          <% if image.include? "http" %>
+              <%= image_tag "#{image}" %> 
+         <% end %>
+            <%=  image["latitude"] %><br /><%= image["longitude"]%>
+        </li>
+      </ul>
+
 <% end %>
+</div>
