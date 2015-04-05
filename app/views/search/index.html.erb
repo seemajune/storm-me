@@ -1,12 +1,16 @@
-  <div style="gallery">
-  <% @all_images.each do |image, location| %>
-      <ul class="rig">
-        <li>
-          <%= image_tag "#{image}" %> 
-          <%  location.each do |loc| %> 
-                <%= loc %> 
-          <% end %>
-        </li>
+  <div style="row col-md-12">
+      <% @all_rc_images.each do |image, info| %>
+      <ul class="col-md-3 rig">
+          <li>
+            <%= image_tag "#{image}" %> 
+          </li>
+        </ul>
+      <% end %>
+      <% @all_kylesa_images.each do |imageM, infoM| %>
+      <ul class="col-md-3 rig">
+          <li>
+            <%= image_tag "#{imageM}" %> 
+          </li>
       </ul>
-  <% end %>
-</div>
+       <% end %>
+  </div>

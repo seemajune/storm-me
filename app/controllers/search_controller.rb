@@ -8,17 +8,34 @@ class SearchController < ApplicationController
     query_string = 'russiancircles/media/recent?access_token='
     token = '50668157.5b9e1e6.0347384d4d26410089b8236038578950'
 
+    query_string2 = 'kylesa/media/recent?access_token='
+
     json = open(base_url + query_string + token).read 
     json_data = JSON.parse(json)
-    all_image_results = json_data["data"]
-    all_images = Hash.new
-    all_image_results.each do |result, value|
+    all_rc_results = json_data["data"]
+    all_rc_images = Hash.new
+    all_rc_results.each do |result, value|
       if result["location"]
-        all_images[result["images"]["thumbnail"]["url"]] = result["location"]
+        all_rc_images[result["images"]["thumbnail"]["url"]] = result["location"]
       end
-      all_images
+      all_rc_images
     end
-    @all_images = all_images
+    @all_rc_images = all_rc_images
+    @all_rc_results = all_rc_results
+
+    json2 = open(base_url + query_string2 + token).read 
+    json2_data = JSON.parse(json2)
+    all_kylesa_results = json2_data["data"]
+    all_kylesa_images = Hash.new
+    all_kylesa_results.each do |result, value|
+      if result["location"]
+        all_kylesa_images[result["images"]["thumbnail"]["url"]] = result["location"]
+      end
+      all_kylesa_images
+    end
+    @all_kylesa_images = all_kylesa_images
+    @all_kylesa_results = all_kylesa_results
+
   end
 
   def show
