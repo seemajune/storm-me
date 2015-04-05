@@ -1,13 +1,12 @@
-<div style="gallery">
-  <% @locations.each_with_index do |image, value| %>
+  <div style="gallery">
+  <% @all_images.each do |image, location| %>
       <ul class="rig">
         <li>
-          <% if image.include? "http" %>
-              <%= image_tag "#{image}" %> 
-         <% end %>
-            <%=  image["latitude"] %><br /><%= image["longitude"]%>
+          <%= image_tag "#{image}" %> 
+          <%  location.each do |loc| %> 
+                <%= loc %> 
+          <% end %>
         </li>
       </ul>
-
-<% end %>
+  <% end %>
 </div>
