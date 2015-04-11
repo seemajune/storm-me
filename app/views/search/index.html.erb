@@ -4,8 +4,8 @@
           <li>
             <%= image_tag "#{image}" %> <br />
             <iframe
-                width="200"
-                height="250"
+                width="150"
+                height="150"
                 frameborder="0" style="border:0"
                 src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API'] %>
                 &q=<%= "#{info["latitude"]},#{info["longitude"]}" %>">
@@ -19,8 +19,8 @@
           <li>
             <%= image_tag "#{imageM}" %><br /> 
                 <iframe
-                width="200"
-                height="250"
+                width="150"
+                height="150"
                 frameborder="0" style="border:0"
                 src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API'] %>
                 &q=<%= "#{infoM["latitude"]},#{infoM["longitude"]}" %>">
