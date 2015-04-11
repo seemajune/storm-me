@@ -6,7 +6,7 @@ class SearchController < ApplicationController
   def index
     base_url = 'https://api.instagram.com/v1/tags/'
     query_string = 'russiancircles/media/recent?access_token='
-    token = ENV['INSTAGRAM_API_KEY']
+    token = '50668157.5b9e1e6.0347384d4d26410089b8236038578950'
 
     query_string2 = 'kylesa/media/recent?access_token='
 

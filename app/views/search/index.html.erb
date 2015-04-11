@@ -3,10 +3,9 @@
       <ul class="col-md-3 rig">
           <li>
             <%= image_tag "#{image}" %> <br />
-            <%= "#{info["latitude"]}"%> <br /> <%= "#{info["longitude"]}" %>
             <iframe
-                width="600"
-                height="450"
+                width="200"
+                height="250"
                 frameborder="0" style="border:0"
                 src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API'] %>
                 &q=<%= "#{info["latitude"]},#{info["longitude"]}" %>">
@@ -19,7 +18,13 @@
       <ul class="col-md-3 rig">
           <li>
             <%= image_tag "#{imageM}" %><br /> 
-            <%= "#{infoM["latitude"]}"%><br /> <%= "#{infoM["longitude"]}" %>
+                <iframe
+                width="200"
+                height="250"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API'] %>
+                &q=<%= "#{infoM["latitude"]},#{infoM["longitude"]}" %>">
+            </iframe>
           </li>
       </ul>
        <% end %>
