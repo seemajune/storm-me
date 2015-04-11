@@ -2,18 +2,26 @@
       <% @all_rc_images.each do |image, info| %>
       <ul class="col-md-3 rig">
           <li>
-            <%= image_tag "#{image}" %> 
+            <%= image_tag "#{image}" %> <br />
+            <%= "#{info["latitude"]}"%> <br /> <%= "#{info["longitude"]}" %>
+            <iframe
+                width="600"
+                height="450"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API'] %>
+                &q=<%= "#{info["latitude"]},#{info["longitude"]}" %>">
+            </iframe>
+            <br>
           </li>
         </ul>
       <% end %>
       <% @all_kylesa_images.each do |imageM, infoM| %>
       <ul class="col-md-3 rig">
           <li>
-            <%= image_tag "#{imageM}" %> 
-          </li>
-          <li>
-            <%= "#{infoM}" %> 
+            <%= image_tag "#{imageM}" %><br /> 
+            <%= "#{infoM["latitude"]}"%><br /> <%= "#{infoM["longitude"]}" %>
           </li>
       </ul>
        <% end %>
   </div>
+

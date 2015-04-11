@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.3.1'
 
 gem 'gmaps4rails'
+
+gem 'dotenv-rails', groups: [:development, :test]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
